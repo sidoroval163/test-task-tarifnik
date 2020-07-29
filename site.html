@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Tarifnik mainpage
+
+    </title>
+</head>
+
+<body>
+    <div class="site_container">
+        <div class="background_container">
+            <div class='header_menu'>
+                <div class="burger" id="burger"><img class="burger_img" src="./icons/burger.svg" alt="бургер меню">
+                </div>
+                <div class="logo" id="logotip"><img class="logo_img" src="./icons/logo.svg" alt="тарифник логотип">
+                </div>
+
+                <div class="menu" id="menu">
+
+                    <ul>
+                        <li class="menu_item"><a>Домашний интернет</a>
+                            <ul class="menu_itemul">
+                                <li class=table_item>Для модема</li>
+                                <li class=table_item>Для дачи и дома</li>
+                                <li class=table_item>Для смартфона</li>
+                            </ul>
+                        </li>
+                        <li class="menu_item"><a>Интернет и тв</a></li>
+                        <li class="menu_item"><a>Телевидение</a></li>
+                    </ul>
+
+                </div>
+                <div class="phone"><img class="phone_img" src="./icons/phone.svg" alt="телефон"></div>
+                <div class="number custom-btn">8 800 111 11 11</div>
+            </div>
+            <div class="form_container">
+                <div class="form_block">
+                    <form class="form" action="https://tarifnik.ru/rabota/api/order_controller" method="POST">
+                        <p class="form_zayavka_txt">Заявка на подключение</p>
+                        <div class="radio_buttons">
+                            <div class="form_radio">
+                                <input id="radio-1" type="radio" name="dislocation" value="home" checked>
+                                <label for="radio-1">В квартиру</label>
+                            </div>
+
+                            <div class="form_radio">
+                                <input id="radio-2" type="radio" name="dislocation" value="office">
+                                <label for="radio-2">В частный дом/офис</label>
+                            </div>
+                        </div>
+
+
+                        <input class='text_input' required type="tel" id="phone" name="phone" placeholder="Ваш телефон*"
+                            pattern="^[0-9]+$" maxlength="11" title="8xxxxxxxxxx">
+
+                        <input class='text_input' type="text" name="name" placeholder="Ваше имя"
+                            pattern="[A-Za-zА-Яа-яЁё\s]+$" maxlength="80" title="Английские или русские буквы">
+                        <input class='text_input' type="text" name="address" maxlength="255"
+                            placeholder="Адрес подключения">
+                        <p class="alert">Поля отмеченные *, обязательны к заполению</p>
+                        <input type="submit" id="submit" class="submit_button" value="Отправить заявку">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="tarifs_header">Тарифы на домашний интернет</div>
+        <div id="zapros" class="zapros"></div>
+    </div>
+    <script defer src="script.js"></script>
+
+</body>
+
+</html>
